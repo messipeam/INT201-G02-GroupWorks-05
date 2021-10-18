@@ -12,7 +12,7 @@ function getPrice(array) {
 }
 
 
-
+//Higher Order Function 
 //สร้าง function สำหรับการตรวจสอบ อายุว่ามากกว่าเท่าไหร่ รับ parameter เป็น array 
 let checkAge = function (ages) {
   // morethan(x) เป็น inner function (closure) ในการตรวจสอบว่ามากกว่าเท่าไหร่ส่ง parameter x ในการตรวจสอบ
