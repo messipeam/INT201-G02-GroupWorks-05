@@ -1,5 +1,5 @@
 //ทำการ import function ทั้งหมดจาก function.js เพื่อนำมาใช้งาน
-import {checkAge, getPrice} from "./function.js";
+import {checkAge,getPrice,createProduct,addPlayer,calAverage} from "./function.js";
 
 //สร้าง product เพื่อทดสอบ function
 const productApple = [
@@ -25,7 +25,7 @@ const productApple = [
 
 
 //case 1
-let totalPriceProductApple = getPrice(productApple.map(({price}) => price)); //ใช้ map() ในการ loop ค่าใน object โดยเอาค่าที่เป็นราคาออกมาคำนวณ
+let totalPriceProductApple = getPrice(productMicrosoft.map(({price}) => price)); //ใช้ map() ในการ loop ค่าใน object โดยเอาค่าที่เป็นราคาออกมาคำนวณ
 console.log(`Total price of products Apple is ${totalPriceProductApple()}`); //แสดงผลรวมของราคาสินค้าทั้งหมด โดยจะไปใช้ function totalprice() ที่อยู่ใน getPrice() มาคำนวณ
 
 //case 2
@@ -49,8 +49,30 @@ console.log(testage(20)) // แสดงผล testage (20) ก็คือ list
 console.log(testage(18)); //ages มากกว่า 18
 console.log(testage(5)); //ages มากกว่า 5
 
-//output [23]
+
+//function create product test case
+
+let product = createProduct();
+product(1,'Coca Cola',16);
+product(2,'Sprite',17);
+product(3,'Milk',12);
+product(3,'Beer',60);
+console.log(product(4,'Orange juice',25))
+//จะไม่แสดง product ที่เป็น Beer ออกมา เพราะ id ซ้ำ
+
+
+
+//function addPlayer test case
+
+console.log(addPlayer('Messi','Barcelona'))
+console.log(addPlayer('Ronaldo')) //หากไม่ใส่ team จะแสดงเป็น Marid เป็น default
 
 
 
 
+//function calAverage test case
+
+console.log(calAverage(20,30,40,60)); //37.5
+console.log(calAverage(100,250,300,500)); //287.5
+console.log(calAverage(1,4,5,10)); //5
+//calAverage function รับ paramter เป็น rest parameter โดยจะเอา arguments ที่เราใส่เข้าไปทุกตัวผ่าน function รวมเป็น array 
